@@ -1,0 +1,26 @@
+services:
+  cursor-proxy:
+    build: ./cursor-proxy
+    environment:
+      - CURSOR_API_KEY=${CURSOR_API_KEY}
+    networks:
+      - ai-net
+
+  hermes:
+    build: ./hermes
+    environment:
+      - CURSOR_PROXY_URL=http://cursor-proxy:8765/v1
+    volumes:
+      - hermes-data:/root/.hermes
+    networks:
+      - ai-net
+    depends_on:
+      - cursor-proxy
+    stdin_open: true
+    tty: true
+
+networks:
+  ai-net:
+
+volumes:
+  hermes-data:
