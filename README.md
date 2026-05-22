@@ -1,6 +1,6 @@
 # hermes-cursor
 
-Runs [Hermes Agent](https://github.com/lunamidori5/hermes-agent) backed by Cursor's LLM via [cursor-api-proxy](https://github.com/anyrobert/cursor-api-proxy). Two containers, one internal Docker network — no credentials baked into images.
+Runs [Hermes Agent](https://hermes-agent.nousresearch.com/docs/) backed by Cursor's LLM via [cursor-api-proxy](https://github.com/anyrobert/cursor-api-proxy). Two containers, one internal Docker network — no credentials baked into images.
 
 ```
 cursor-proxy (port 8765)   <──ai-net──>   hermes
